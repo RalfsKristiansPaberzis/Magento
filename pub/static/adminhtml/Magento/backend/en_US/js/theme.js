@@ -1,0 +1,1 @@
+/var/www/magento/public/vendor/magento/theme-adminhtml-backend/web/js/theme.js

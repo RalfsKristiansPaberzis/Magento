@@ -1,0 +1,86 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block View */
+
+use Magento\Catalog\Block\Product\View;
+use Magento\CatalogInventory\Api\StockRegistryInterface;
+
+?>
+<?php $_product = $block->getProduct(); ?>
+<?php $buttonTitle = __('Add to Cart'); ?>
+
+<?php
+// Inject StockRegistryInterface
+$stockRegistry = \Magento\Framework\App\ObjectManager::getInstance()->get(StockRegistryInterface::class);
+
+$stockStatus = ($_product->isSaleable()) ? $stockRegistry->getStockItem($_product->getId())->getQty() : 0;
+$stockText = ($_product->isSaleable()) ? $stockStatus . ' items available' : '';
+$stockTextMain = ($_product->isSaleable()) ? 'In Stock' : 'Out of Stock';
+?>
+
+<?php if ($_product->isSaleable()) :?>
+    <div class="box-tocart">
+        <div class="fieldset">
+            <?php if ($block->shouldRenderQuantity()) :?>
+                <div class="field qty">
+                    <div class="control">
+                        <a id="decrementBtn">-</a>
+                        <input type="number"
+                               name="qty"
+                               id="qty"
+                               min="0"
+                               value="<?= $block->getProductDefaultQty() * 1 ?>"
+                               title="<?= $block->escapeHtmlAttr(__('Qty')) ?>"
+                               class="input-text qty"
+                               data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
+                        />
+                        <a id="incrementBtn">+</a>
+                        <div class="outerStockStatus">
+                            <span class="outerStockStatusOne"><?= $stockTextMain?></span>
+                            <span class="outerStockStatusTwo"><?= $stockText?></span>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <div class="actions">
+                <button type="submit"
+                        title="<?= $block->escapeHtmlAttr($buttonTitle) ?>"
+                        class="action primary tocart"
+                        id="product-addtocart-button" disabled>
+                    <span><?= $block->escapeHtml($buttonTitle) ?></span>
+                </button>
+                <?= $block->getChildHtml('', true) ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "Magento_Catalog/js/validate-product": {}
+        }
+    }
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const quantityInput = document.getElementById('qty');
+        const incrementButton = document.getElementById('incrementBtn');
+        const decrementButton = document.getElementById('decrementBtn');
+
+        incrementButton.addEventListener('click', function () {
+            const currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+
+        decrementButton.addEventListener('click', function () {
+            const currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+    });
+</script>

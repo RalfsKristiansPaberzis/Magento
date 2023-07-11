@@ -1,0 +1,13 @@
+<?php /** @var Magebit\PageListWidget\Block\Widget\Samplewidget $block */ ?>
+
+<div class="Magebit-widget">
+    <?php if ($block->getTitle()): ?>
+        <h2><?= $block->escapeHtml($block->getTitle()) ?></h2>
+    <?php endif; ?>
+    <ul>
+        <?php foreach ($block->getCmsPages() as $page): ?>
+            <li><a href="<?= $block->escapeUrl($page->getIdentifier()) ?>"><?= $block->escapeHtml($page->getTitle()) ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+

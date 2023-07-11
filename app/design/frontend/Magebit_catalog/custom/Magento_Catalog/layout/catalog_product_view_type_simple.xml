@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+
+        <referenceBlock name="view.addto.compare" remove="true"/>
+        <referenceBlock name="view.addto.wishlist" remove="true"/>
+        <referenceBlock name="product.attributes" remove="true"/>
+        <referenceBlock name="reviews.tab" remove="true"></referenceBlock>
+        <referenceBlock name="product.info.upsell" remove="true"/>
+
+        <move element="product.info.overview" destination="product.info.main" after="product.mycustom.attribute"/>
+
+        <referenceContainer name="product.info.main">
+            <block class="Magento\Catalog\Block\Product\View\Attributes" name="product.mycustom.attribute" template="Magento_Catalog::product/view/attributes.phtml" after="product.info.price" />
+        </referenceContainer>
+
+        <referenceContainer name="product.info.extrahint">
+            <block class="Magento\Catalog\Block\Product\ProductList\Upsell" name="product.info.upsell.link" template="Magento_Catalog::product/list/upsell.phtml"/>
+        </referenceContainer>
+
+    </body>
+</page>

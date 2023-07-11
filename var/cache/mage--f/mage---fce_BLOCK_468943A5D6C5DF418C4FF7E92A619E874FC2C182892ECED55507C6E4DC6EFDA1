@@ -1,0 +1,6 @@
+a:4:{s:4:"hash";s:0:"";s:5:"mtime";i:1689028693;s:6:"expire";i:1689032293;s:4:"tags";s:69:"fce_BLOCK_HTML,fce_CAT_C,fce_CAT_C_4,fce_CAT_C_6,fce_CAT_C_7,fce_MAGE";}
+
+<nav class="navigation" data-action="navigation">
+    <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
+        <li  class="level0 nav-1 category-item first level-top"><a href="http://magento.local/apple-phones.html"  class="level-top" ><span>Apple Phones</span></a></li><li  class="level0 nav-2 category-item level-top"><a href="http://magento.local/blackberry-phones.html"  class="level-top" ><span>Blackberry Phones</span></a></li><li  class="level0 nav-3 category-item last level-top"><a href="http://magento.local/nokia-phones.html"  class="level-top" ><span>Nokia Phones</span></a></li>            </ul>
+</nav>

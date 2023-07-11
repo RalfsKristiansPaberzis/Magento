@@ -1,0 +1,80 @@
+Autoload error: Theme 'frontend/Magebit_catalog/custom' from '/var/www/magento/public/app/design/frontend/Magebit_catalog/custom' has been already defined in '/var/www/magento/public/app/design/frontend/Magebit_home/custom'.
+Autoload error: Module 'Magebit_FirstModule' from '/var/www/magento/public/app/code/Magebit/Magebit_home' has been already defined in '/var/www/magento/public/app/code/Magebit/FirstModule'.
+
+In Mysql.php line 109:
+                                                                               
+  SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progre  
+  ss, query was: SELECT `queue_message`.`topic_name`, `queue_message`.`body`,  
+   `queue_message_status`.`id` AS `relation_id`, `queue_message_status`.`queu  
+  e_id`, `queue_message_status`.`message_id`, `queue_message_status`.`status`  
+  , `queue_message_status`.`updated_at`, `queue_message_status`.`number_of_tr  
+  ials` AS `retries`, `queue`.`name` AS `queue_name` FROM `queue_message`      
+   INNER JOIN `queue_message_status` ON queue_message.id = queue_message_stat  
+  us.message_id                                                                
+   INNER JOIN `queue` ON queue.id = queue_message_status.queue_id WHERE (queu  
+  e_message_status.status IN (2, 5)) AND (queue.name = 'inventory.reservation  
+  s.cleanup') ORDER BY `queue_message_status`.`updated_at` ASC, `queue_messag  
+  e_status`.`id` ASC                                                           
+   LIMIT 1                                                                     
+                                                                               
+
+In Mysql.php line 90:
+                                                                               
+  SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progre  
+  ss                                                                           
+                                                                               
+
+queue:consumers:start [--max-messages MAX-MESSAGES] [--batch-size BATCH-SIZE] [--area-code AREA-CODE] [--single-thread] [--multi-process [MULTI-PROCESS]] [--pid-file-path PID-FILE-PATH] [--] <consumer>
+
+
+In Mysql.php line 109:
+                                                                               
+  SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progre  
+  ss, query was: SELECT `queue_message`.`topic_name`, `queue_message`.`body`,  
+   `queue_message_status`.`id` AS `relation_id`, `queue_message_status`.`queu  
+  e_id`, `queue_message_status`.`message_id`, `queue_message_status`.`status`  
+  , `queue_message_status`.`updated_at`, `queue_message_status`.`number_of_tr  
+  ials` AS `retries`, `queue`.`name` AS `queue_name` FROM `queue_message`      
+   INNER JOIN `queue_message_status` ON queue_message.id = queue_message_stat  
+  us.message_id                                                                
+   INNER JOIN `queue` ON queue.id = queue_message_status.queue_id WHERE (queu  
+  e_message_status.status IN (2, 5)) AND (queue.name = 'inventory.reservation  
+  s.update') ORDER BY `queue_message_status`.`updated_at` ASC, `queue_message  
+  _status`.`id` ASC                                                            
+   LIMIT 1                                                                     
+                                                                               
+
+In Mysql.php line 90:
+                                                                               
+  SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progre  
+  ss                                                                           
+                                                                               
+
+queue:consumers:start [--max-messages MAX-MESSAGES] [--batch-size BATCH-SIZE] [--area-code AREA-CODE] [--single-thread] [--multi-process [MULTI-PROCESS]] [--pid-file-path PID-FILE-PATH] [--] <consumer>
+
+
+In Mysql.php line 109:
+                                                                               
+  SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progre  
+  ss, query was: SELECT `queue_message`.`topic_name`, `queue_message`.`body`,  
+   `queue_message_status`.`id` AS `relation_id`, `queue_message_status`.`queu  
+  e_id`, `queue_message_status`.`message_id`, `queue_message_status`.`status`  
+  , `queue_message_status`.`updated_at`, `queue_message_status`.`number_of_tr  
+  ials` AS `retries`, `queue`.`name` AS `queue_name` FROM `queue_message`      
+   INNER JOIN `queue_message_status` ON queue_message.id = queue_message_stat  
+  us.message_id                                                                
+   INNER JOIN `queue` ON queue.id = queue_message_status.queue_id WHERE (queu  
+  e_message_status.status IN (2, 5)) AND (queue.name = 'inventory.source.item  
+  s.cleanup') ORDER BY `queue_message_status`.`updated_at` ASC, `queue_messag  
+  e_status`.`id` ASC                                                           
+   LIMIT 1                                                                     
+                                                                               
+
+In Mysql.php line 90:
+                                                                               
+  SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progre  
+  ss                                                                           
+                                                                               
+
+queue:consumers:start [--max-messages MAX-MESSAGES] [--batch-size BATCH-SIZE] [--area-code AREA-CODE] [--single-thread] [--multi-process [MULTI-PROCESS]] [--pid-file-path PID-FILE-PATH] [--] <consumer>
+

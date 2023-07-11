@@ -1,0 +1,42 @@
+<?php /** @var Upsell $block */
+
+use Magento\Catalog\Block\Product\ProductList\Upsell; ?>
+
+<?php
+$itemCollection = $block->getItemCollection()->getItems();
+$upsellProducts = array_values($itemCollection);
+if (!empty($upsellProducts)):
+    $firstUpsellProduct = $upsellProducts[0];
+    ?>
+    <div class="upsellText">
+        We found other products you might like!
+    </div>
+    <div class="product-item">
+        <div class="product-item-info">
+            <div class="outerUpsell">
+                <div class="product-item-image">
+                    <a href="<?php echo $firstUpsellProduct->getProductUrl(); ?>" class="product photo product-item-photo">
+                        <img src="<?php echo $block->getImage($firstUpsellProduct, 'category_page_grid')->getImageUrl(); ?>" alt="<?php echo $firstUpsellProduct->getName(); ?>" />
+                    </a>
+                </div>
+                <div class="product-item-details">
+                    <strong class="product-item-name">
+                        <a href="<?php echo $firstUpsellProduct->getProductUrl(); ?>"><?php echo $firstUpsellProduct->getName(); ?></a>
+                    </strong>
+                    <div class="product-item-rating">
+                        <?php echo $block->getReviewsSummaryHtml($firstUpsellProduct, 'short'); ?>
+                    </div>
+                    <div class="product-item-price">
+                        <?php echo $block->getProductPrice($firstUpsellProduct); ?>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item-actions">
+                <a href="<?php echo $firstUpsellProduct->getProductUrl(); ?>" class="action view">View Product</a>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+
+

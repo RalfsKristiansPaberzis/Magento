@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="magebit_lyt">
+        <route id="magebit_firstlayout" frontName="firstlayout">
+            <module name="Magebit_FirstLayout" />
+        </route>
+    </router>
+</config>

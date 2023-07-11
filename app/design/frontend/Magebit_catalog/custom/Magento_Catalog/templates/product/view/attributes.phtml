@@ -1,0 +1,42 @@
+<?php
+/** @var $block Attributes */
+
+use Magento\Catalog\Block\Product\View\Attributes;
+?>
+
+<?php
+$_helper = $this->helper('Magento\Catalog\Helper\Output');
+$_product = $block->getProduct();
+?>
+<div class="Magebit-attributes">
+    <?php
+    $attributeCodes = ['color', 'manufacturer', 'size', 'color_01', 'weight_01', 'dimensions'];
+
+    if (!empty($attributeCodes)) {
+        ?>
+                <?php
+                foreach ($attributeCodes as $attributeCode) {
+                    $attribute = $_product->getResource()->getAttribute($attributeCode);
+
+                    if ($attribute) {
+                        $attr_value = $attribute->getFrontend()->getValue($_product);
+
+                        if (!empty($attr_value)) {
+                            ?>
+                            <div class="Magebit-attr">
+                                <ul class="attribute-list">
+                                    <li>
+                                        <span class="attribute-name"><?= $block->escapeHtml($attribute->getDefaultFrontendLabel()) ?>:</span>
+                                        <span class="attribute-value"><?= $block->escapeHtml($attr_value) ?></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <?php
+                        }
+                    }
+                }
+                ?>
+        <?php
+    }
+    ?>
+</div>
