@@ -1,0 +1,11 @@
+# Directories
+/var/
+/generated/
+/vendor/
+
+# Files
+.htaccess
+.htaccess.sample
+.htaccess.dev
+.htaccess.prod
+composer.lock

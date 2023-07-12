@@ -78,3 +78,8 @@ In Mysql.php line 90:
 
 queue:consumers:start [--max-messages MAX-MESSAGES] [--batch-size BATCH-SIZE] [--area-code AREA-CODE] [--single-thread] [--multi-process [MULTI-PROCESS]] [--pid-file-path PID-FILE-PATH] [--] <consumer>
 
+
+                                                          
+  There are no commands defined in the "cron" namespace.  
+                                                          
+

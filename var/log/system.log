@@ -6602,3 +6602,10 @@ XML declaration allowed only at the start of the document
 #24 /var/www/magento/public/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun()
 #25 /var/www/magento/public/bin/magento(23): Symfony\Component\Console\Application->run()
 #26 {main} [] []
+[2023-07-11T09:24:02.169579+00:00] main.ERROR: There are no commands defined in the "cron" namespace.
+#0 /var/www/magento/public/vendor/symfony/console/Application.php(701): Symfony\Component\Console\Application->findNamespace()
+#1 /var/www/magento/public/vendor/symfony/console/Application.php(259): Symfony\Component\Console\Application->find()
+#2 /var/www/magento/public/vendor/magento/framework/Console/Cli.php(116): Symfony\Component\Console\Application->doRun()
+#3 /var/www/magento/public/vendor/symfony/console/Application.php(171): Magento\Framework\Console\Cli->doRun()
+#4 /var/www/magento/public/bin/magento(23): Symfony\Component\Console\Application->run()
+#5 {main} [] []
